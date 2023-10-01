@@ -1,3 +1,4 @@
+html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,200 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
   <title>Frontend Mentor | Results summary component</title>
 
-  
-  <style>
-    .footer { font-size: 11px; text-align: center; }
-    .footer a { color: hsl(228, 45%, 44%); }
-    *{
-    margin: 0;
-    padding:0;
-    box-sizing: border-box;
-    font-family: main;
-
-}
-
-:root {
-    --Lightred: hsl(0, 100%, 67%);
-    --Lightredg1: hsl(0, 100%, 67%,0.1);
-    --Orangeyyellow: hsl(39, 100%, 56%);
-    --Orangeyyellowg2: hsl(39, 100%, 56%,0.1);
-    --Greenteal: hsl(166, 100%, 37%);
-    --Greentealg3: hsl(166, 100%, 37%,0.1);
-    --Cobaltblue: hsl(234, 85%, 45%);
-    --Cobaltblueg4: hsl(234, 85%, 45%,0.1);
-
-    /* gradient   */
-    --Lightslatebluebg: hsl(252, 100%, 67%);
-    --Lightroyalbluebg: hsl(241, 81%, 54%);
-    --VioletblueCC: hsla(256, 72%, 46%, 1);
-    --PersianblueCC: hsla(241, 72%, 46%, 0);
-
-
-    --White: hsl(0, 0%, 100%);
-    --Paleblue: hsl(221, 100%, 96%);
-    --Lightlavender: hsl(241, 100%, 89%);
-    --Darkgraybluebtn: hsl(224, 30%, 27%);
-
-
-    }
-    @font-face {
-      font-family:main;
-      src: url(/assets/fonts/HankenGrotesk-VariableFont_wght.ttf);
-    }
-
-      main{
-        min-height: 100vh;
-        display: grid;
-        place-items: center;
-
-       
-      }
-      p{
-        font-size: 18px;
-      }
-      .card{
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        overflow: hidden;
-        width: 600px;
-        height: 490px;
-        border-radius: 30px;
-        background-color: #ffff;
-        box-shadow: 1px 10px 30px #dbd2d2;
-      }
-      @media only screen and (max-width: 375px) {
-          main{
-            width: 100%;
-            height: 100%;
-          }  
-        .card{
-            display:grid;
-            grid-template-columns: repeat(1,fr);
-          }    
-      }
-      .card-items-bg{
-        padding: 1rem;
-        background-image: linear-gradient(var(--Lightslatebluebg),var(--Lightroyalbluebg));
-        color: #ffff;
-        text-align: center;
-        width: 300px;
-        height: 100%;
-        border-radius: 30px;
-      }
-
-      .card-items-bg h1{
-        padding: 1rem;
-        padding: unset;
-
-      }
-      .card-items-bg p{
-        font-size: 18px;
-      }
-      .card-items-bg h2{
-        padding: 1rem;
-        color: var(--Lightlavender);
-      }
-      
-      .card-items-bg .circle{
-        border-radius: 50%;
-        height: 200px;
-        width: 200px;
-        margin: 1rem;
-        padding: 3rem;
-        text-align: center;
-        justify-content: center;
-        background-image: linear-gradient(var(--VioletblueCC),var(--PersianblueCC));
-        overflow: hidden;
-      }
-      .card-items-bg .circle .num{
-        font-weight: 700;
-        font-size: 4rem;
-        display: block;
-      }  
-      .card-items-bg .circle p{
-        padding: unset;
-      } 
-      .card-items-bg p{
-        color: var(--Lightlavender);
-        font-size: 18px;
-        padding: 1rem;
-      }
-      /* 2 box  */
-      .card-items{
-        padding: 2rem;
-
-
-      }
-      .card-items .score-board{
-        margin-top: 2rem;
-        margin-bottom: 3rem;
-      }
-      .card-items .score-board .s-items{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        height: 50px;
-        padding: .5rem;
-        font-size: 15px;
-        margin-bottom: 1rem;
-        border-radius: 12px;
-        color:var(--Darkgraybluebtn);
-      }
-      .s-items .category{
-        display: flex;
-      }
-      .s-items .score{
-        color: var(--Darkgraybluebtn);
-      }
-      .s-items .score span{
-          font-weight: 700;
-          color:var(--Darkgraybluebtn);
-      }
-      .category img{
-        margin-right: .5rem;
-      }
-      
-      .card-items .score-board .bg1{
-        color: var(--Lightred);
-        background-color: var(--Lightredg1);
-      }
-      .card-items .score-board .bg2{
-        color: var(--Orangeyyellow);
-        background-color: var(--Orangeyyellowg2);
-      }
-      .card-items .score-board .bg3{
-        color: var(--Greenteal);
-        background-color: var(--Greentealg3);
-      }
-      .card-items .score-board .bg4{
-        color: var(--Cobaltblue);
-        background-color: var(--Cobaltblueg4);
-      }
-      .card-items a{
-        background-color: var(--Darkgraybluebtn);
-        color: #ffff;
-        display: block;
-        text-align: center;
-        padding-top: .7rem;
-        width: 100%;
-        height: 45px;
-        border-radius: 30px;
-        transition: 1s;
-      }
-      .card-items a:hover{
-        background-color: unset;
-        color: var(--Darkgraybluebtn);
-        border: 1px solid var(--Darkgraybluebtn);
-        font-weight: 700;
-      }
-
-      
-
-
-  </style>
+  <link rel="stylesheet" href="mystyle.css">
+  <script src="script.js"></script>
 </head>
 <body>
 <main>
@@ -220,61 +31,23 @@
     </div>
     <div class="card-items">
         <h2>Summary</h2>
-        <div class="score-board">
-          <div class="s-items bg1">
-            <div class="category">
-              <img src="/assets/images/icon-reaction.svg" alt="">
-            Reaction 
-            </div>
-            <div class="score">
-              <span>80</span>
-            /100
-          </div>
+        <div class="score-board" id="score-board">
+          <!-- scores will be updated here -->
         </div>
-        <div class="s-items bg2">
-          <div class="category">
-            <img src="/assets/images/icon-memory.svg" alt="">
-          Memory 
-          </div>
-          <div class="score">
-            <span>92</span>
-          /100
-        </div>
-      </div>
-      <div class="s-items bg3">
-        <div class="category">
-          <img src="/assets/images/icon-verbal.svg" alt="">
-        Verbal 
-        </div>
-        <div class="score">
-          <span>61</span>
-        /100
-      </div>
-    </div>
-    <div class="s-items bg4">
-      <div class="category">
-        <img src="/assets/images/icon-visual.svg" alt="">
-      Visual 
-      </div>
-      <div class="score">
-        <span>72</span>
-      /100
-    </div>
-  </div>
-
-      </div>
-
         <a class="botton">Continue</a>
+      </div>
+        
     </div>
   </div>
 
 </main>
 
+<div class="footer">
+  Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+  Coded by <a href="#">Maiphan BK</a>.
+</div>
 
-  
-  <div class="footer">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+
+
 </body>
 </html>
